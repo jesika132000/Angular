@@ -1,0 +1,69 @@
+:host { --rx: 12deg; --ry: -18deg; }
+
+.molecule {
+  width: 360px; height: 360px;
+  transform-style: preserve-3d;
+  perspective: 900px;
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transition: transform 200ms linear;
+  position: relative;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,.15));
+}
+
+.nucleus {
+  position: absolute; inset: 0;
+  margin: auto;
+  width: 120px; height: 120px; border-radius: 9999px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,.2) 40%) ,
+    radial-gradient(circle at 70% 70%, rgba(14,165,233,.9), rgba(14,165,233,.4) 60%);
+  box-shadow:
+    0 0 0 8px rgba(14,165,233,.15),
+    0 0 60px 10px rgba(14,165,233,.35);
+  transform: translateZ(20px);
+}
+
+.orbit {
+  position: absolute; inset: 0;
+  margin: auto;
+  width: 100%; height: 100%;
+  border-radius: 9999px;
+  transform-style: preserve-3d;
+  animation: spin var(--speed, 10s) linear infinite;
+}
+
+.orbit::before {
+  content: "";
+  position: absolute; inset: 0;
+  border: 1.5px dashed rgba(14,165,233,.35);
+  border-radius: 9999px;
+  transform: rotateX(var(--tilt, 60deg)) translateZ(var(--z, 0px));
+}
+
+.orbit-a { --tilt: 70deg; --speed: 12s; --z: 0px;   }
+.orbit-b { --tilt: 40deg; --speed: 10s; --z: 0px;   }
+.orbit-c { --tilt: 85deg; --speed: 16s; --z: 0px;   }
+
+.electron {
+  --offset: 0deg;
+  position: absolute; top: 50%; left: 50%;
+  width: 18px; height: 18px; border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, white, #bae6fd 70%);
+  transform-origin: -160px 0;
+  transform:
+    rotateY(var(--tilt, 60deg))
+    rotateZ(calc(var(--offset)))
+    translateX(160px)
+    translateZ(0px);
+  box-shadow: 0 0 20px rgba(59,130,246,.6);
+  animation: buzz 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes spin {
+  to { transform: rotateZ(360deg); }
+}
+
+@keyframes buzz {
+  from { transform: translateZ(0) rotateY(var(--tilt, 60deg)) rotateZ(var(--offset)) translateX(160px); }
+  to   { transform: translateZ(14px) rotateY(var(--tilt, 60deg)) rotateZ(calc(var(--offset) + 8deg)) translateX(160px); }
+}

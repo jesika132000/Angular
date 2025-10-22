@@ -1,0 +1,31 @@
+<section class="relative overflow-hidden py-24 md:py-32 ">
+  <div class="container mx-auto px-4 grid md:grid-cols-2 items-center gap-12">
+    <div *ngFor="let f of items()">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">{{ f.title }}
+        Visualiza la <span class="text-[#9b32e2]">Química</span> en 3D
+      </h1>
+      <p class="mt-4 text-lg opacity-80">{{ f.desc }}
+      </p>
+      <div class="mt-8 flex gap-3">
+        <a class="px-5 py-3 rounded-xl bg-purple-700 text-white hover:opacity-90">Empezar</a>
+      </div>
+    </div>
+    <div class="justify-self-center">
+      <div class="molecule" #mol>
+        <div class="nucleus"></div>
+        <div class="orbit orbit-a">
+          <span class="electron"></span>
+        </div>
+        <div class="orbit orbit-b">
+          <span class="electron"></span>
+          <span class="electron" style="--offset: 180deg"></span>
+        </div>
+        <div class="orbit orbit-c">
+          <span class="electron"></span>
+          <span class="electron" style="--offset: 120deg"></span>
+          <span class="electron" style="--offset: 240deg"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

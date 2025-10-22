@@ -1,0 +1,11 @@
+<div class="min-h-dvh flex flex-col text-neutral-900 dark:text-neutral-100">
+    <ng-content select="[slot=announcement]"></ng-content>
+
+    <ng-content select="[slot=header]"></ng-content>
+
+    <main class="flex-1">
+        <ng-content></ng-content>
+    </main>
+
+    <ng-content select="[slot=footer]"></ng-content>
+</div>

@@ -1,0 +1,11 @@
+<app-liquid-bg></app-liquid-bg>
+<app-layout>
+    <app-header slot="header"
+        [solidOnStart]="solidHeader()"
+        [onDarkStart]="headerOnDarkStart()"
+        [showThemeToggle]="true">
+    </app-header>
+    <ng-content></ng-content>
+    <app-footer slot="footer"></app-footer>
+</app-layout>
+
