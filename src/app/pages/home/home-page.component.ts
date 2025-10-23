@@ -59,6 +59,22 @@ export class HomePageComponent {
       accent: 'from-fuchsia-400 to-violet-500',
       colSpan: 2, rowSpan: 2,
     },
+    {
+      id: 'physical',
+      title: 'Physical Chemistry',
+      description: 'Fundamental physical principles behind chemical systems.',
+      image: '/image/organic.webp',
+      accent: 'from-sky-400 to-indigo-500',
+      colSpan: 1, rowSpan: 3,
+    },
+    {
+      id: 'analytical',
+      title: 'Analytical Chemistry',
+      description: 'Separation, identification, quantification of compounds.',
+      image: '/image/Inorganic.webp',
+      accent: 'from-fuchsia-400 to-violet-500',
+      colSpan: 2, rowSpan: 2,
+    },
   ];
 
     
