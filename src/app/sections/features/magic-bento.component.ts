@@ -11,7 +11,8 @@ import { TiltDirective } from '../../shared/ui/tilt.directive';
 })
 export class MagicBentoComponent {
     @Input() items: FeatureItem[] = [];
-    @Input() subtitle?: string;
+    @Input() subtitle = '';  
+    @Input() parrafo  = '';
 
     spanClass(f: FeatureItem) {
         const cols = Math.min(Math.max(f.colSpan ?? 1, 1), 3);

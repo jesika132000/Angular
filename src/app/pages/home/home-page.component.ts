@@ -4,11 +4,12 @@ import { HeroChem3DComponent } from '../../sections/hero-chem3d/hero-chem3d.comp
 import { FeaturesComponent } from '../../sections/features/features.component';
 import { MagicBentoComponent } from '../../sections/features/magic-bento.component';
 import { FeatureItem } from '../../sections/features/feature.model';
+import { ContactComponent, ContactVM } from '../../widgets/contact.component';
 
 @Component({
     standalone: true,
     selector: 'app-home-page',
-    imports: [PageLayoutComponent, HeroChem3DComponent, FeaturesComponent, MagicBentoComponent],
+    imports: [PageLayoutComponent, HeroChem3DComponent, FeaturesComponent, MagicBentoComponent, ContactComponent],
     templateUrl: './home-page.component.html',
 })
 
@@ -17,6 +18,7 @@ export class HomePageComponent {
     heroChem3d = [
         {
             desc: 'Una landing de práctica en Angular con un héroe 3D hecho solo con CSS y un toque de TypeScript.',
+            button: 'Empezar',
         }
     ];
 
@@ -77,6 +79,13 @@ export class HomePageComponent {
     },
   ];
 
-    
+  contactContent: ContactVM = {
+    title: 'Contacto',
+    desc: `¿Tienes dudas, propuestas o ideas para mejorar este laboratorio visual?
+      Nuestro equipo revisa cada mensaje con atención para seguir puliendo la experiencia
+      y añadir nuevas demos de química computacional. Cuéntanos qué te gustaría ver,
+      qué te ha resultado útil y en qué te podemos ayudar. ¡Te leemos!`,
+    button: 'Enviar',
+  }
 
 }

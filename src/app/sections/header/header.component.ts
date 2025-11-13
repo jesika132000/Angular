@@ -1,4 +1,4 @@
-import { Component, input, HostBinding } from '@angular/core';
+import { Component, input, HostBinding, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,6 +11,8 @@ export class HeaderComponent {
   solidOnStart = input(false);
   onDarkStart = input(false);
   showThemeToggle = input(true);
+
+  @Output() navigate = new EventEmitter<string>();
 
   @HostBinding('class.dark') get dark() { return this.onDarkStart(); }
 

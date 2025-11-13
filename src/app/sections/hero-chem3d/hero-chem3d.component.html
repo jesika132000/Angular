@@ -1,5 +1,5 @@
 <section class="relative overflow-hidden py-24 md:py-32 ">
-  <div class="container mx-auto px-4 grid md:grid-cols-2 items-center gap-12">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 items-center gap-12">
     <div *ngFor="let f of items()">
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">{{ f.title }}
         Visualiza la <span class="text-[#9b32e2]">Química</span> en 3D
@@ -7,7 +7,9 @@
       <p class="mt-4 text-lg opacity-80">{{ f.desc }}
       </p>
       <div class="mt-8 flex gap-3">
-        <a class="px-5 py-3 rounded-xl bg-purple-700 text-white hover:opacity-90">Empezar</a>
+        <a href="">
+          <button class="px-5 py-3 rounded-xl bg-purple-700 text-white text-lg hover:opacity-90 cursor-pointer">{{ f.button }}</button>
+        </a>
       </div>
     </div>
     <div class="justify-self-center">
