@@ -1,8 +1,22 @@
-<app-page-layout [headerOnDarkStart]="true">
-    <app-hero-chem3d [items]="heroChem3d"></app-hero-chem3d>
-    <app-features [items]="features"></app-features>
-    <app-magic-bento
-        [items]="features2"
-        subtitle="Explore the Branches of Chemistry">
-    </app-magic-bento>
+<app-page-layout >
+    <section id="inicio">
+        <app-hero-chem3d [items]="heroChem3d"></app-hero-chem3d>
+    </section>
+
+    <section  id="servicios">
+        <app-features 
+            [items]="features"
+            subtitle="Services to Elevate Your Chemistry Learning"
+            parrafo="Esta landing combina un héroe 3D hecho sólo con CSS y microinteracciones de ratón para crear una experiencia inmersiva y fluida. El objetivo es que practiques la composición de componentes en Angular, el diseño de un layout limpio y la organización semántica del marcado. Trabajamos con Tailwind para acelerar estilos consistentes, accesibles y mantenibles, manteniendo un sistema tipográfico claro y jerárquico. Te guía por un flujo simple: héroe, tarjetas de características y una rejilla de ejemplo, todo con atención a rendimiento y responsividad. Las animaciones están balanceadas para no distraer: buscan reforzar el contenido con transiciones suaves y sombras sutiles. El código prioriza la reutilización: inputs, tipados y utilidades permiten iterar rápido sin perder orden ni legibilidad. Incluye ejemplos de gradientes, filtros y capas para lograr profundidad sin depender de librerías pesadas o WebGL. Es una demo educativa: no hay datos reales; el foco es aprender patrones que puedas llevar a proyectos de producción.">
+        </app-features>
+        <app-magic-bento
+            [items]="features2"
+            subtitle="Explore the Branches of Chemistry"
+            parrafo="Esta sección presenta una rejilla tipo “bento” donde cada tarjeta puede cambiar de tamaño mediante spans configurables en columnas y filas. La composición mantiene el equilibrio visual con bordes redondeados, capas de brillo discretas y un efecto “tilt” responsivo al puntero. La implementación está pensada para crecer: las tarjetas aceptan imagen, título, descripción y un acento de gradiente definido por inputs. Así puedes reorganizar el layout sin tocar el HTML interno, priorizando componentes puros y estilos utilitarios predecibles. En móviles, la rejilla se apila con ritmos verticales generosos; en escritorio, distribuye peso para mejorar escaneabilidad. Las imágenes se tratan con `object-cover`, sombras y filtros ligeros para aportar profundidad sin sacrificar nitidez ni performance. El texto mantiene contraste y tamaño legible; los espacios (padding y gap) evitan el ruido visual y refuerzan jerarquías. El resultado es un patrón reutilizable: estético, accesible y fácil de mantener, ideal para catálogos, features o galerías técnicas. ">
+        </app-magic-bento>
+    </section>
+
+    <section id="contacto" class="mt-24">
+        <app-contact [f]="contactContent"></app-contact>
+    </section>
 </app-page-layout>

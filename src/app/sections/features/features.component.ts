@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgFor } from '@angular/common';
 
 @Component({
@@ -9,5 +9,7 @@ import { NgFor } from '@angular/common';
 })
 
 export class FeaturesComponent {
-    items = input<any[] | null>(null);
+    @Input() items: any[] = [];   
+    @Input() subtitle = '';
+    @Input() parrafo = '';
 }

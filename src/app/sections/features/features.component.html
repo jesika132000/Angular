@@ -1,6 +1,9 @@
-<section class="container mx-auto px-4 py-16">
+<section class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-center text-2xl md:text-3xl font-semibold mb-6">{{ subtitle }}</h2>
+    <p class="mb-8 text-white/80 leading-7 text-justify"> {{ parrafo }}</p>
+
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <article *ngFor="let f of items()" class="rounded-2xl border p-6 hover:shadow-lg transition">
+        <article *ngFor="let f of items" class="rounded-2xl border p-6 hover:shadow-lg transition">
             <h3 class="text-xl font-semibold">{{ f.title }}</h3>
             <p class="mt-2 opacity-80">{{ f.desc }}</p>
         </article>

@@ -15,4 +15,8 @@ import { LiquidEtherBackgroundComponent } from '../backgrounds/liquid-ether.comp
 export class PageLayoutComponent {
     headerOnDarkStart = input<boolean>(false);
     solidHeader = input<boolean>(false);
+
+    scrollTo(id: string) {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
